@@ -1,0 +1,30 @@
+[
+  {
+    "title": "올바른 괄호",
+    "section": 6,
+    "number": 1,
+    "category": "Stack",
+    "source": "인프런"
+  },
+  {
+    "title": "괄호문자 제거",
+    "section": 6,
+    "number": 2,
+    "category": "Stack",
+    "source": "인프런"
+  },
+  {
+    "title": "크레인 인형뽑기",
+    "section": 6,
+    "number": 3,
+    "category": "Stack",
+    "source": "인프런"
+  },
+  {
+    "title": "후위식 연산",
+    "section": 6,
+    "number": 4,
+    "category": "Stack",
+    "source": "인프런"
+  }
+]
