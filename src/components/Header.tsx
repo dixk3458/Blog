@@ -7,9 +7,9 @@ export default function Header() {
         <h1 className="text-3xl font-bold">Jaewoong</h1>
       </Link>
       <nav className="flex gap-4 capitalize">
-        <Link href="/">home</Link>
         <Link href="/about">about</Link>
         <Link href="/post">posts</Link>
+        <Link href="/algorithm">algorithm</Link>
         <Link href="/contact">contact</Link>
       </nav>
     </header>
