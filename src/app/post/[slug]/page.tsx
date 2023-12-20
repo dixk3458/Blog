@@ -22,7 +22,7 @@ export default async function Post({ params }: Props) {
         height={420}
       />
       <PostContent postData={postData} />
-      <section>
+      <section className='flex shadow-md'>
         {prev && <AdjacentPost post={prev} type="prev" />}
         {next && <AdjacentPost post={next} type="next" />}
       </section>
