@@ -11,7 +11,11 @@ export type Post = {
   featured: boolean;
 };
 
-export type PostData = Post & { content: string };
+export type PostData = Post & {
+  content: string;
+  prev: Post | null;
+  next: Post | null;
+};
 
 export async function getAllPosts(): Promise<Post[]> {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
@@ -36,15 +40,19 @@ export async function getNonFeaturedPosts(): Promise<Post[]> {
 export async function getPostData(fileName: string): Promise<PostData> {
   const filePath = path.join(process.cwd(), 'data', 'posts', `${fileName}.md`);
 
-  const metadata = await getAllPosts().then(posts =>
-    posts.find(post => post.path === fileName)
-  );
+  const posts = await getAllPosts();
+  const post = posts.find(post => post.path === fileName);
 
-  if (!metadata) {
+  if (!post) {
     throw new Error(`${fileName}에 해당하는 포스트를 가져올수없습니다.`);
   }
 
+  const index = posts.indexOf(post);
+
+  const prev = index > 0 ? posts[index - 1] : null;
+  const next = index < posts.length - 1 ? posts[index + 1] : null;
+
   const content = await readFile(filePath, 'utf-8');
 
-  return { ...metadata, content };
+  return { ...post, content, prev, next };
 }
