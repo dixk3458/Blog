@@ -30,5 +30,29 @@
     "needToReview": true,
     "category": "Stack",
     "source": "인프런"
+  },
+  {
+    "title": "쇠막대기(스택)",
+    "section": 6,
+    "number": 5,
+    "needToReview": true,
+    "category": "Stack",
+    "source": "인프런"
+  },
+  {
+    "title": "공주 구하기",
+    "section": 6,
+    "number": 6,
+    "needToReview": true,
+    "category": "Queue",
+    "source": "인프런"
+  },
+  {
+    "title": "교육과정 설계",
+    "section": 6,
+    "number": 7,
+    "needToReview": true,
+    "category": "Queue",
+    "source": "인프런"
   }
 ]
