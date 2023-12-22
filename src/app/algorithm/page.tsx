@@ -14,11 +14,11 @@ export default async function AlgorithmPage() {
   ];
 
   return (
-    <section className='m-4'>
+    <>
       <FilterableAlgorithms
         algorithms={algorithms}
         categories={['All', ...categories]}
       />
-    </section>
+    </>
   );
 }

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
   openGraph: {
-    images: [],
+    images: ['/opengraph-image.png'],
   },
 };
 
@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className="flex flex-col max-w-screen-2xl mx-auto">
         <Header />
-        <main className="grow">{children}</main>
+        <main className="grow m-8">{children}</main>
         <Footer />
       </body>
     </html>

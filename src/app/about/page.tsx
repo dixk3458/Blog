@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <section className="flex flex-col gap-4 m-4">
+    <section className="flex flex-col gap-4 p-4">
       <AboutHero />
       <AboutText />
     </section>
