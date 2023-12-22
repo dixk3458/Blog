@@ -1,5 +1,11 @@
 import FilterableAlgorithms from '@/components/FilterableAlgorithms';
 import { getAllAlgorithm } from '@/service/algorithm';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Algorithm Page',
+  description: '정재웅의 All Algorithm',
+};
 
 export default async function AlgorithmPage() {
   const algorithms = await getAllAlgorithm();
