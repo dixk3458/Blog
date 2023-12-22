@@ -1,6 +1,7 @@
 import { metadata } from './../app/layout';
 import { readFile } from 'fs/promises';
 import path from 'path';
+import { cache } from 'react';
 
 export type Post = {
   title: string;
@@ -17,13 +18,16 @@ export type PostData = Post & {
   next: Post | null;
 };
 
-export async function getAllPosts(): Promise<Post[]> {
+// cache로 감싸게 되면 fetch와 마찬가지로 중복된 요청을 제거하고 
+// 동일한 인자를 이용해 요청을 한다면 cache되어있는 요청을 이용한다.
+// 서버가 동작하는 모든 시간에 계속 cache 하는것이 아니라 , 한번 렌더링 되는 사이클에 한해서만 cache를 해준다. (page렌더링 사이클)
+export const getAllPosts = cache(async () => {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
 
   return readFile(filePath, 'utf-8')
     .then<Post[]>(data => JSON.parse(data))
     .then(posts => posts.sort((a, b) => (a.date < b.date ? -1 : 1)));
-}
+});
 
 export async function getFeaturedPosts(): Promise<Post[]> {
   return getAllPosts().then(posts =>

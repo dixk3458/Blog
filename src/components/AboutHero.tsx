@@ -22,7 +22,7 @@ export default function AboutHero() {
           <p className="text-xl font-semibold">How I got where I am now.</p>
         </Link>
       </div>
-      <Image src={imagePath} alt="About Me" width={250} height={200} />
+      <Image priority src={imagePath} alt="About Me" width={250} height={200} />
     </section>
   );
 }

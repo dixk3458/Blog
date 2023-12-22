@@ -1,6 +1,6 @@
 import AdjacentPost from '@/components/AdjacentPost';
 import PostContent from '@/components/PostContent';
-import { getPostData } from '@/service/post';
+import { getAllPosts, getPostData } from '@/service/post';
 import { Metadata } from 'next';
 import Image from 'next/image';
 
@@ -12,7 +12,6 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { title, description } = await getPostData(params.slug);
-  console.log(title);
   return {
     title: title,
     description: description,
@@ -38,4 +37,11 @@ export default async function Post({ params }: Props) {
       </section>
     </article>
   );
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  return posts.map(post => ({
+    slug: post.path,
+  }));
 }

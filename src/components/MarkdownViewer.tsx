@@ -13,16 +13,15 @@ export default function MarkdownViewer({ content }: Props) {
     <>
       <Markdown
         className="max-w-none prose lg:prose-xl"
-        children={content}
         components={{
           code(props) {
             const { children, className, node, ...rest } = props;
             const match = /language-(\w+)/.exec(className || '');
             return match ? (
               <SyntaxHighlighter
-                // {...rest}
-                PreTag="div"
                 language={match[1]}
+                PreTag="div"
+                // {...rest}
                 style={materialDark}
               >
                 {String(children).replace(/\n$/, '')}
@@ -51,7 +50,9 @@ export default function MarkdownViewer({ content }: Props) {
           },
         }}
         remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
-      />
+      >
+        {content}
+      </Markdown>
     </>
   );
 }

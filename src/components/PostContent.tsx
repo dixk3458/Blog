@@ -1,6 +1,6 @@
 import MarkdownViewer from '@/components/MarkdownViewer';
 import { PostData } from '@/service/post';
-import { FaRegCalendarAlt } from 'react-icons/Fa';
+import { FaRegCalendarAlt } from 'react-icons/fa';
 
 type Props = {
   postData: PostData;

@@ -1,6 +1,6 @@
 import AlgorithmContent from '@/components/AlgorithmContent';
 
-import { getAlgorithmData } from '@/service/algorithm';
+import { getAlgorithmData, getAllAlgorithm } from '@/service/algorithm';
 import { Metadata } from 'next';
 
 type Props = {
@@ -27,4 +27,11 @@ export default async function AlgorithmDetailPage({ params: { slug } }: Props) {
       <AlgorithmContent algorithmData={algorithmData} />
     </article>
   );
+}
+
+export async function generateStaticParams() {
+  const algorithms = await getAllAlgorithm();
+  return algorithms.map(algorithm => {
+    return { slug: algorithm.title };
+  });
 }
