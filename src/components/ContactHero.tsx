@@ -33,7 +33,10 @@ export default function ContactHero() {
           );
         })}
       </ul>
-      <Link className="group flex items-center gap-4 mt-20 text-slate-500" href={''}>
+      <Link
+        className="group flex items-center gap-4 mt-20 text-slate-500"
+        href="#form"
+      >
         <FaArrowDown className="text-xl font-bold group-hover:animate-bounce" />
         <p className="text-lg font-semibold">Get to know more about me</p>
       </Link>
