@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "Woongs' Blog",
     template: "Woong's %s",
   },
-  description: '프론트엔드 지망생 정재웅의 블로그',
+  description: '프론트엔드 개발자 지망생 정재웅의 블로그',
   icons: {
     icon: '/favicon.ico',
   },

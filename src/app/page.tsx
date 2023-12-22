@@ -5,10 +5,10 @@ import Image from 'next/image';
 
 export default function HomePage() {
   return (
-    <>
+    <section className='m-4'>
       <Hero />
       <FeaturedPosts />
       <CarouselPosts />
-    </>
+    </section>
   );
 }
