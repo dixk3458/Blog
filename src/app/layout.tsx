@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
   openGraph: {
+    url: 'https://blog-bice-nine-39.vercel.app/',
     images: 'https://blog-bice-nine-39.vercel.app/opengraph-image.png',
   },
 };
